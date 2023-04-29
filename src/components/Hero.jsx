@@ -64,18 +64,13 @@ const Tit = styled.h1`
     width: 0px;
     overflow: hidden;
     white-space: nowrap;
-  }
+    animation : moveText 3s linear both;
 
-  &:hover{
-    ::after{
-      animation : moveText 2s linear both;
-
-      @keyframes moveText {
+    @keyframes moveText {
         to{
           width: 100%;
         }
       }
-    }
   }
 
   @keyframes pulsate {
@@ -106,9 +101,12 @@ const Button = styled.button`
   padding: 10px;
   background-color: #FFC300;
   border-radius: 5px;
-  border: none;
+  border: 1px solid #FFC300;
   color: black;
   cursor: pointer;
+  :hover{
+    color:white;
+  }
 `;
 
 const Hero = () => {

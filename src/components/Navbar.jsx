@@ -50,6 +50,9 @@ const Button = styled.button`
   border-radius: 5px;
   border: none;
   color: black;
+  :hover{
+    color: white;
+  }
 `;
 
 const Navbar = () => {
