@@ -42,6 +42,7 @@ const Icon = styled.img`
   width: 20px;
   cursor: pointer;
 `;
+
 const Button = styled.button`
   width: 100px;
   padding: 10px;
