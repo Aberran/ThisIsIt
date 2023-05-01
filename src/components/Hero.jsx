@@ -1,6 +1,9 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
 import Navbar from "./Navbar";
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls, TorusKnot } from "@react-three/drei";
+
 
 const Section = styled.div`
   height: 100vh;
@@ -91,8 +94,6 @@ const Desc = styled.p`
   color: #FFC300;
   `;
 
-const Line = styled.div``;
-
 const Subtitle = styled.h2`
 `;
 
@@ -109,6 +110,11 @@ const Button = styled.button`
   }
 `;
 
+// raycast
+
+const raycaster = new THREE.Raycaster
+const pointer = new THREE.Vector2()
+
 const Hero = () => {
   return(
     <Section>
@@ -122,8 +128,15 @@ const Hero = () => {
             <Button>CO TU ?</Button>
         </TopLeft>
         <BotRight>
-          {/* {3d model} */}
-          <img src="./img/test400x490.png" />
+          <Canvas>
+            <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={1}/>
+            <TorusKnot args={[10, 3, 100, 10]} scale={0.13}>
+              <meshNormalMaterial wireframe={true}/>
+            </TorusKnot>
+            <TorusKnot args={[10, 3, 100, 10]} scale={0.13}>
+              <meshNormalMaterial wireframe={false} flatShading={true}/>
+            </TorusKnot>
+          </Canvas>
         </BotRight>
       </Container>
     </Section>
