@@ -3,6 +3,7 @@ import styled, { keyframes } from "styled-components";
 import Navbar from "./Navbar";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, TorusKnot } from "@react-three/drei";
+import * as THREE from "three"
 
 
 const Section = styled.div`
@@ -112,8 +113,8 @@ const Button = styled.button`
 
 // raycast
 
-const raycaster = new THREE.Raycaster
-const pointer = new THREE.Vector2()
+const raycaster = new THREE.Raycaster();
+const pointer = new THREE.Vector2();
 
 const Hero = () => {
   return(
@@ -130,9 +131,9 @@ const Hero = () => {
         <BotRight>
           <Canvas>
             <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={1}/>
-            <TorusKnot args={[10, 3, 100, 10]} scale={0.13}>
+            {/* <TorusKnot args={[10, 3, 100, 10]} scale={0.13}>
               <meshNormalMaterial wireframe={true}/>
-            </TorusKnot>
+            </TorusKnot> */}
             <TorusKnot args={[10, 3, 100, 10]} scale={0.13}>
               <meshNormalMaterial wireframe={false} flatShading={true}/>
             </TorusKnot>
