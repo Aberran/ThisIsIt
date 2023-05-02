@@ -2,8 +2,10 @@ import React from "react";
 import styled, { keyframes } from "styled-components";
 import Navbar from "./Navbar";
 import { Canvas } from "@react-three/fiber";
-import { MeshDistortMaterial, OrbitControls, TorusKnot } from "@react-three/drei";
-import * as THREE from "three"
+import { OrbitControls, TorusKnot } from "@react-three/drei";
+import * as THREE from "three";
+import Typical from "react-typical";
+
 
 
 const Section = styled.div`
@@ -95,7 +97,7 @@ const Desc = styled.p`
   color: #FFC300;
   `;
 
-const Subtitle = styled.h2`
+const Subtitle = styled.p`
 `;
 
 const Button = styled.button`
@@ -138,7 +140,7 @@ const Hero = () => {
           <Desc>
             Mam rad pacu aj lejcu {" "}
           </Desc>
-            <Subtitle>xasdafaw</Subtitle>
+            <Subtitle>xasdafaw {" "}<Typical loop={Infinity} wrapper="b" steps={[ "Father", 1000, "Developer", 1000 ]}/></Subtitle>
             <Button>CO TU ?</Button>
         </TopLeft>
         <BotRight>
@@ -158,6 +160,7 @@ const Hero = () => {
     </Section>
   );
 };
+
 
 window.addEventListener("mousemove", onMouseMove)
 export default Hero
