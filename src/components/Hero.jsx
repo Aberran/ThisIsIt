@@ -2,13 +2,13 @@ import React from "react";
 import styled, { keyframes } from "styled-components";
 import Navbar from "./Navbar";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, TorusKnot } from "@react-three/drei";
+import { MeshDistortMaterial, OrbitControls, TorusKnot } from "@react-three/drei";
 import * as THREE from "three"
 
 
 const Section = styled.div`
   height: 100vh;
-  background: black;
+  /* background: #242424; */
   scroll-snap-align: center;
   display: flex;
   flex-direction:column;
@@ -54,7 +54,7 @@ const Tit = styled.h1`
   font-size: 75px;
   font-weight: bold;
   cursor: pointer;
-  color: black;
+  color: #242424;
   text-shadow: 1px 0 1px #FFC300, -1px 0 1px #FFC300, 0 1px 1px #FFC300, 0 -1px 1px #FFC300;
   /* animation: pulsate 2s infinite; */
   position: relative;
@@ -101,9 +101,9 @@ const Subtitle = styled.h2`
 const Button = styled.button`
   width: 100px;
   padding: 10px;
-  background-color: #FFC300;
+  background-color:  #FFC300;
   border-radius: 5px;
-  border: 1px solid #FFC300;
+  border: 1px solid  #FFC300;
   color: black;
   cursor: pointer;
   :hover{
@@ -116,6 +116,17 @@ const Button = styled.button`
 const raycaster = new THREE.Raycaster();
 const pointer = new THREE.Vector2();
 
+const onMouseMove = (event) => {
+  // calculate pointer position in normalized device coordinates
+	// (-1 to +1) for both components
+
+	pointer.x = ( event.clientX / window.innerWidth ) * 2 - 1;
+	pointer.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+
+  raycaster.setFromCamera(pointer, test.camera);
+  const intersects = raycaster.intersectObjects(test.scene.children);
+}
+
 const Hero = () => {
   return(
     <Section>
@@ -124,12 +135,16 @@ const Hero = () => {
         <TopLeft>
           <Title>Hello, I am <Tit>Vladimir Sabik</Tit></Title>
           <WhatIDo>-- What i do</WhatIDo>
-          <Desc>Mam rad pacu aj lejcu</Desc>
+          <Desc>
+            Mam rad pacu aj lejcu {" "}
+          </Desc>
             <Subtitle>xasdafaw</Subtitle>
             <Button>CO TU ?</Button>
         </TopLeft>
         <BotRight>
           <Canvas>
+            <ambientLight intensity={0.1}/>
+            <directionalLight position={[3,2,1]}/>
             <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={1}/>
             {/* <TorusKnot args={[10, 3, 100, 10]} scale={0.13}>
               <meshNormalMaterial wireframe={true}/>
@@ -144,4 +159,5 @@ const Hero = () => {
   );
 };
 
+window.addEventListener("mousemove", onMouseMove)
 export default Hero

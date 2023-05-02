@@ -12,8 +12,12 @@ const Container = styled.div`
   overflow-y: auto;
   scrollbar-width: none;
   color: white;
+  background: linear-gradient(#242424, #5f5656);
   &::-webkit-scrollbar{display:none};
 `
+
+// #263238
+// #242424
 
 function App() {
 
