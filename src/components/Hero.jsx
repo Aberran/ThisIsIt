@@ -4,7 +4,7 @@ import Navbar from "./Navbar";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, TorusKnot } from "@react-three/drei";
 import * as THREE from "three";
-import Typical from "react-typical";
+import Typer from "../func/Typer";
 
 
 
@@ -55,8 +55,7 @@ const Title = styled.h1`
 const Tit = styled.h1`
   font-size: 75px;
   font-weight: bold;
-  cursor: pointer;
-  color: #242424;
+  color: white;
   text-shadow: 1px 0 1px #FFC300, -1px 0 1px #FFC300, 0 1px 1px #FFC300, 0 -1px 1px #FFC300;
   /* animation: pulsate 2s infinite; */
   position: relative;
@@ -98,6 +97,7 @@ const Desc = styled.p`
   `;
 
 const Subtitle = styled.p`
+  font-size: 50px;
 `;
 
 const Button = styled.button`
@@ -140,7 +140,7 @@ const Hero = () => {
           <Desc>
             Mam rad pacu aj lejcu {" "}
           </Desc>
-            <Subtitle>xasdafaw {" "}<Typical loop={Infinity} wrapper="b" steps={[ "Father", 1000, "Developer", 1000 ]}/></Subtitle>
+            <Typer/>
             <Button>CO TU ?</Button>
         </TopLeft>
         <BotRight>
