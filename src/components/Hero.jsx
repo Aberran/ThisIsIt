@@ -55,8 +55,9 @@ const Title = styled.h1`
 const Tit = styled.h1`
   font-size: 75px;
   font-weight: bold;
-  color: White;
-  text-shadow: 1px 0 1px #FFC300, -1px 0 1px #FFC300, 0 1px 1px #FFC300, 0 -1px 1px #FFC300;
+  color: transparent;
+  /* text-shadow: 1px 0 1px #FFC300, -1px 0 1px #FFC300, 0 1px 1px #FFC300, 0 -1px 1px #FFC300; */
+  -webkit-text-stroke: 2px, #FFC300;
   /* animation: pulsate 2s infinite; */
   position: relative;
 
