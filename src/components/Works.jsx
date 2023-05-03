@@ -32,19 +32,35 @@ const List = styled.ul`
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 20px
-`
+  gap: 20px;
+`;
 
 const ListItem = styled.li`
- font-size: 100px;
+ font-size: 90px;
  font-weight: bold;
  cursor: pointer;
  /* color: transparent; */
-`
+  :hover {
+    animation: pulsate 2s infinite;
+    color: #FFC300;
+    
+    @keyframes pulsate {
+      0% {
+        text-shadow: 0 0 0 rgba(255,195,0, 1);
+      }
+      50% {
+        text-shadow: 0 0 20px rgba(255,195,0, 0.5);
+       }
+      100% {
+        text-shadow: 0 0 0 rgba(255,195,0, 1);
+      }
+    }
+  }
+`;
 
 const BotRight = styled.div`
   flex: 1;
-`
+`;
 
 
 const Works = () => {

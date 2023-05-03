@@ -49,13 +49,13 @@ const WhatIDo = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 75px;
+  font-size: 70px;
 `;
 
 const Tit = styled.h1`
   font-size: 75px;
   font-weight: bold;
-  color: white;
+  color: White;
   text-shadow: 1px 0 1px #FFC300, -1px 0 1px #FFC300, 0 1px 1px #FFC300, 0 -1px 1px #FFC300;
   /* animation: pulsate 2s infinite; */
   position: relative;
@@ -77,18 +77,6 @@ const Tit = styled.h1`
         }
       }
   }
-
-  @keyframes pulsate {
-    0% {
-    text-shadow: 0 0 0 rgba(255,195,0, 1);
-  }
-  50% {
-    text-shadow: 0 0 20px rgba(255,195,0, 0.5);
-  }
-  100% {
-    text-shadow: 0 0 0 rgba(255,195,0, 1);
-  }
-  }
 `;
 
 const Desc = styled.p`
@@ -106,7 +94,7 @@ const Button = styled.button`
   background-color:  #FFC300;
   border-radius: 5px;
   border: 1px solid  #FFC300;
-  color: black;
+  color: #242424;
   cursor: pointer;
   :hover{
     color:white;
@@ -135,7 +123,7 @@ const Hero = () => {
       <Navbar/>
       <Container>
         <TopLeft>
-          <Title>Hello, I am <Tit>Vladimir Sabik</Tit></Title>
+          <Title>Hello, I'm <Tit>Vladimir Sabik</Tit></Title>
           <WhatIDo>-- What i do</WhatIDo>
           <Desc>
             Mam rad pacu aj lejcu {" "}
