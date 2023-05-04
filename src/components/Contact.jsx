@@ -63,17 +63,21 @@ const BotRight = styled.div`
   flex: 1;
 `;
 
+const handleSubmit = f => (
+  f.preventDefault()
+)
+
 const Contact = () => {
   return(
     <Section>
       <Container>
         <TopLeft>
-          <Form>
+          <Form onSubmit={handleSubmit}>
             <Title>Contact Me</Title>
             <Input placeholder="Name"></Input>
             <Input placeholder="Email"></Input>
             <TextArea placeholder="Write your message" rows={10}/>
-            <Button>Send</Button>
+            <Button type="submit">Send</Button>
           </Form>
         </TopLeft>
         <BotRight>

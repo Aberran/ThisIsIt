@@ -39,6 +39,8 @@ const ListItem = styled.li`
  font-size: 90px;
  font-weight: bold;
  cursor: pointer;
+ color: transparent;
+ -webkit-text-stroke: 1px  #FFC300;
  /* color: transparent; */
   :hover {
     animation: pulsate 2s infinite;

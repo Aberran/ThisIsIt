@@ -23,13 +23,14 @@ const Container = styled.div`
   width: 1400px;
   display: flex;
   justify-content: space-between;
+  padding-left: 100px;
 `;
 
 const TopLeft = styled.div`
   flex: 2;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content:center;
   gap: 20px;
   /* padding-left: 100px; */
   `;
@@ -37,12 +38,12 @@ const TopLeft = styled.div`
 
 const BotRight = styled.div`
   flex: 3;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: flex; 
+  justify-content: flex-end;
+  /* /* align-items: flex-end; */
   `;
 
-const WhatIDo = styled.div`
+const WhatIDo = styled.h1`
   display: flex;
   align-items: center;
   gap: 10px;
@@ -50,6 +51,8 @@ const WhatIDo = styled.div`
 
 const Title = styled.h1`
   font-size: 70px;
+  display: flex;
+  align-items: flex-end;
 `;
 
 const Tit = styled.h1`
@@ -57,7 +60,7 @@ const Tit = styled.h1`
   font-weight: bold;
   color: transparent;
   /* text-shadow: 1px 0 1px #FFC300, -1px 0 1px #FFC300, 0 1px 1px #FFC300, 0 -1px 1px #FFC300; */
-  -webkit-text-stroke: 2px, #FFC300;
+  -webkit-text-stroke: 1px #FFC300;
   /* animation: pulsate 2s infinite; */
   position: relative;
 
@@ -78,15 +81,6 @@ const Tit = styled.h1`
         }
       }
   }
-`;
-
-const Desc = styled.p`
-  font-style: 24px;
-  color: #FFC300;
-  `;
-
-const Subtitle = styled.p`
-  font-size: 50px;
 `;
 
 const Button = styled.button`
@@ -124,18 +118,15 @@ const Hero = () => {
       <Navbar/>
       <Container>
         <TopLeft>
-          <Title>Hello, I'm <Tit>Vladimir Sabik</Tit></Title>
-          <WhatIDo>-- What i do</WhatIDo>
-          <Desc>
-            Mam rad pacu aj lejcu {" "}
-          </Desc>
+          <Title>Hello, I'm</Title>
+          <Tit>Vladimir Sabik</Tit>
+            {/* <WhatIDo>-- Student at Technical University of Kosice</WhatIDo> */}
+            <WhatIDo>-- What I do ? </WhatIDo>
             <Typer/>
             <Button>CO TU ?</Button>
         </TopLeft>
         <BotRight>
           <Canvas>
-            <ambientLight intensity={0.1}/>
-            <directionalLight position={[3,2,1]}/>
             <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={1}/>
             {/* <TorusKnot args={[10, 3, 100, 10]} scale={0.13}>
               <meshNormalMaterial wireframe={true}/>

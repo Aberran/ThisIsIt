@@ -4,11 +4,17 @@ import styled from "styled-components";
 const Section = styled.div`
   height: 100vh;
   scroll-snap-align: center;
-`
+`;
+
+const Picture = styled.img`
+  /* width: 30%; */
+  border: 1px solid #FFC300;
+  border-radius: 50%;
+  `;
 
 const Who = () => {
   return(
-    <Section>Who</Section>
+    <Section><Picture src="/img/prof.jpg"/></Section>
   )
 }
 

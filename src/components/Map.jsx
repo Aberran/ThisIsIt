@@ -14,12 +14,13 @@ const Map = () => {
       projectionConfig={{
         rotate: [-10.0, -52.0, 0],
         center: [-5, -3],
-        scale: 1100
+        scale: 1400
       }}
+      style={{width:"100%", height:"100%"}}
     >
       <Geographies
         geography="/features.json"
-        fill="#D6D6DA"
+        fill= "#5f5656"
         stroke="#FFFFFF"
         strokeWidth={0.5}
       >
@@ -30,17 +31,17 @@ const Map = () => {
         }
       </Geographies>
       <Annotation
-        subject={[2.3522, 48.8566]}
-        dx={-90}
-        dy={-30}
+        subject={[21.3522, 48.8566]}
+        dx={-40}
+        dy={-80}
         connectorProps={{
-          stroke: "#FF5533",
-          strokeWidth: 3,
+          stroke: "white",
+          strokeWidth: 2,
           strokeLinecap: "round"
         }}
       >
-        <text x="-8" textAnchor="end" alignmentBaseline="middle" fill="#F53">
-          {"Paris"}
+        <text x="-8" textAnchor="end" alignmentBaseline="middle" fill="white">
+          {"Koisce"}
         </text>
       </Annotation>
     </ComposableMap>
